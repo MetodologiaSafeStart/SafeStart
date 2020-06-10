@@ -1,44 +1,50 @@
 
 tab = []
 loop = 'loop'
-# tab will hold all Kaprekar numbers found
-# loop is just for better wording
+# La lista tab va a contener los números ingresados.
+# La variable loop va ser para una mejor redacción.
 
 def asc(n):
-    # puts the number's digits in ascending...
+    # Ordena los dígitos en forma ascendente...
     return int(''.join(sorted(str(n))))
 
 def desc(n):
-    # ...and descending order
+    # ...Ordena los dígitos de forma descendente
     return int(''.join(sorted(str(n))[::-1]))
 
-n = input("Introduce un numero: ")
-try:
-    n = int(n)
-except:
-    # assuming n = 2016 to prevent program from crashing
-    print("\nNummero invalido!!!\nAssuming n = 2016.")
-    n = "2016"
-print("\nCargando...", str(n) + ":")
+n = input("Introduce un numero de 4 dígitos: ")
+n = int(n)
 
-while True:
-    # iterates, assigns the new diff
+if n>999 and n<10000:#Tiene que ser un número de 4 cifras.
+ print("\nCargando...", str(n) + ":")
+
+
+ while True:
+    # Itera el programa, asignando la diferencia entre los valores.
     print(desc(n), "-", asc(n), "=", desc(n)-asc(n))
     n = desc(n) - asc(n)
 
     if n not in tab:
-        # checks if already hit that number
+        # Chequea si el numero aparece en tab o no, si no aparece lo agrega.
         tab.append(n)
     else:
         if tab.index(n) == len(tab)-1:
-        # if found as the last, it is a constant...
+        # Si éste se encuentra al último, es una constante Kaprekar.
             tab = []
             tab.append(n)
             loop = 'constante'
         else:
-        # ...otherwise it is a loop
+        
             tab = tab[tab.index(n):]
-            # strip the first, non-looping items
+            
+
         break
 
-print('Kaprekar', loop, 'resultado:', tab)
+ 
+ 
+ print('Kaprekar', loop, 'resultado:', tab)
+ 
+else:
+ print("Número no válido")
+
+
