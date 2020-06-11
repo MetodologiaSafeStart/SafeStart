@@ -10,26 +10,23 @@ class AddProyecto(CreateView):
 	template_name='home/add-proyecto.html'
 	model= Proyecto
 	second_model=Usuario
-	nombre_usuario= nombre
+	nombre_usuario= Usuario.nombre
 	fields=['nombre_proyecto','descripcion_proyecto',
 	'foto_proyecto','foto_proyecto2','fecha_publicacion',
 	'nombre_usuario','rubro']
 	success_url='/'
 
-class AddProyecto(CreateView):
-	template_name='home/add-proyecto.html'
-	model= Proyecto
-	second_model=Usuario
-	nombre_usuario= nombre
-	fields=['nombre_proyecto','descripcion_proyecto',
-	'foto_proyecto','foto_proyecto2','fecha_publicacion',
-	'nombre_usuario','rubro']
-	success_url='/'
+class ModifyUser(CreateView):
+	template_name='home/modify-user.html'
+	model= Usuario
+	fields=['foto_perfil','profesion','presentacion','enlace_referencias']
+	success_url='.'
+
 
 class ListaProyecto(ListView):
 	template_name='home/proyectos.html'
 	model= Proyecto
-	context_object_name=proyectos
+	context_object_name='proyectos'
 	paginate_by = 10
 	def get_queryset(self):
 		queryset = super(ListaProyecto, self).get_queryset()
@@ -43,19 +40,19 @@ class ListaProyecto(ListView):
 class MostrarUser(DetailView):
 	template_name='home/user.html'
 	model=Usuario
-	context_object_name=user
+	context_object_name='user'
 
 	def get_queryset(self):
-		id = self.kwargs['nombre']
+		id = self.kwargs['pk']
 		lista=Usuario.objects.filter(
-			nombre_usuario=id
+			usuario=id
 
 			)
 		return lista
 
 class MostrarProyecto(DetailView):
 	template_name='home/proyecto.html'
-	context_object_name=proyecto
+	context_object_name='proyecto'
 
 	def get_queryset(self):
 		id = self.kwargs['pk']
