@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PROYECTO</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>Autores Registrados</h1>
+	
+	<table border="1">
+		<thead>
+			<th>ID</th>
+			<th>Nombre del proyecto</th>
+			<th>Descripción del proyecto</th>
+			<th>Imagen</th>
+			<th>Imagen 2</th>
+			<th>Fecha publicacion</th>
+			<th>Rubro</th>
+			<th>Usuario</th>
+
+
+		</thead>
+		<tbody>
+		{% for l in proyecto %}
+			<tr>
+				<td><p>{{l.id}}</p> </td>
+				<td><p>{{l.nombre_proyecto}}</p> </td>
+				<td><p>{{l.descripcion_proyecto}}</p> </td>
+				<td><p>{{l.foto_proyecto}}</p> </td>
+				<td><p>{{l.foto_proyecto2}}</p> </td>
+				<td><p>{{l.fecha_publicacion}}</p> </td>
+				<td><p>{{l.rubro}}</p> </td>
+				<td><a href="{% url 'home_app:user-perfil' l.nombre_usuario.id %}">l.nombre_ususario</a></td>
+			</tr>
+			
+		{% endfor %}
+
+
+		</tbody>
+	</table>
+</body>
+</html>

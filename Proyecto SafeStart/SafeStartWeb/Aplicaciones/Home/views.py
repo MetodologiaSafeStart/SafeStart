@@ -53,6 +53,7 @@ class MostrarUser(DetailView):
 class MostrarProyecto(DetailView):
 	template_name='home/proyecto.html'
 	context_object_name='proyecto'
+	model=Usuario
 
 	def get_queryset(self):
 		id = self.kwargs['pk']

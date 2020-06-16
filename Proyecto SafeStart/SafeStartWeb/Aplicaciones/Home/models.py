@@ -1,6 +1,7 @@
 from django.db import models
 class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
-    nombre= models.CharField('Nombre',max_length=25,help_text='Ingrese su nombre',primary_key=True)
+    
+    nombre= models.CharField('Nombre',max_length=25,help_text='Ingrese su nombre')
     fecha_nacimiento=models.DateField(help_text='Fecha de nacimiento')
     foto_perfil=models.ImageField(help_text='Elije una foto',null=True,blank=True)
     profesion=models.CharField(help_text='Profesión',max_length=30,null=True,blank=True)
@@ -51,7 +52,8 @@ class Proyecto(models.Model):
        ('VE','Ventas'),
       )
     
-    nombre_proyecto= models.CharField('Nombre',max_length=25,help_text='Ingrese el nombre del proyecto',primary_key=True)
+    
+    nombre_proyecto= models.CharField('Nombre',max_length=25,help_text='Ingrese el nombre del proyecto')
     descripcion_proyecto=models.TextField(help_text='Acerca del Proyecto',max_length=200)
     foto_proyecto=models.ImageField(help_text='Elije una foto',null=True,blank=True)
     foto_proyecto2=models.ImageField(help_text='Elije una foto',null=True,blank=True)
