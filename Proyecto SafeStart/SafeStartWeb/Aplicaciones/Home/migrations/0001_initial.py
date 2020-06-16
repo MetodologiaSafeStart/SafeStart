@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Usuario',
             fields=[
-                ('nombre', models.CharField(help_text='Ingrese su nombre', max_length=25, primary_key=True, serialize=False, verbose_name='Nombre')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nombre', models.CharField(help_text='Ingrese su nombre', max_length=25, serialize=False, verbose_name='Nombre')),
                 ('fecha_nacimiento', models.DateField(help_text='Fecha de nacimiento')),
                 ('foto_perfil', models.ImageField(blank=True, help_text='Elije una foto', null=True, upload_to='')),
                 ('profesion', models.CharField(blank=True, help_text='Profesión', max_length=30, null=True)),
@@ -27,7 +28,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Proyecto',
             fields=[
-                ('nombre_proyecto', models.CharField(help_text='Ingrese el nombre del proyecto', max_length=25, primary_key=True, serialize=False, verbose_name='Nombre')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nombre_proyecto', models.CharField(help_text='Ingrese el nombre del proyecto', max_length=25, serialize=False, verbose_name='Nombre')),
                 ('descripcion_proyecto', models.TextField(help_text='Acerca del Proyecto', max_length=200)),
                 ('foto_proyecto', models.ImageField(blank=True, help_text='Elije una foto', null=True, upload_to='')),
                 ('foto_proyecto2', models.ImageField(blank=True, help_text='Elije una foto', null=True, upload_to='')),

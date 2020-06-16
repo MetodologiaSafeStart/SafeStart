@@ -1,5 +1,9 @@
 from django.db import models
 class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
+<<<<<<< HEAD
+=======
+
+>>>>>>> cba478fe367a0a1df53379ccc7dda9e5f050ba55
     nombre= models.CharField('Nombre',max_length=25,help_text='Ingrese su nombre')
     fecha_nacimiento=models.DateField(help_text='Fecha de nacimiento')
     foto_perfil=models.ImageField(help_text='Elije una foto',null=True,blank=True)
@@ -69,7 +73,6 @@ class Proyecto(models.Model):
     
 
 
-
-    
+   
     
 
