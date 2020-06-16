@@ -11,7 +11,8 @@ class UsuarioAdmin(admin.ModelAdmin):
 		'profesion',
 		'correo',
 		'presentacion',
-		'enlace_referencias'
+		'enlace_referencias',
+		'id'
 		)
 
 	search_fields =('nombre', 'profesion',)
@@ -24,7 +25,8 @@ class ProyectoAdmin(admin.ModelAdmin):
 		'foto_proyecto2',
 		'fecha_publicacion',
 		'nombre_usuario',
-		'rubro'
+		'rubro',
+		'id'
 		)
 
 	list_filter=('fecha_publicacion',
