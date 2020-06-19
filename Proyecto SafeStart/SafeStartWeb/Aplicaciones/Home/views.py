@@ -39,13 +39,12 @@ class ListaProyecto(ListView):
 
 class MostrarUser(DetailView):
 	template_name='home/user.html'
-	model=Usuario
 	context_object_name='user'
 
 	def get_queryset(self):
 		id = self.kwargs['pk']
 		lista=Usuario.objects.filter(
-			usuario=id
+			id=id
 
 			)
 		return lista
@@ -53,13 +52,12 @@ class MostrarUser(DetailView):
 class MostrarProyecto(DetailView):
 	template_name='home/proyecto.html'
 	context_object_name='proyecto'
-	model=Usuario
+	
 
-	def get_queryset(self):
+	def get_queryset(self):	
 		id = self.kwargs['pk']
 		lista=Proyecto.objects.filter(
-			Proyecto=id
-
+				id=id
 			)
 		return lista
 
