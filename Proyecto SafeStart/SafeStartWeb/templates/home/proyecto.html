@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<h1>Autores Registrados</h1>
+	<h1>Proyectos</h1>
 	
 	<table border="1">
 		<thead>
@@ -23,19 +23,19 @@
 
 		</thead>
 		<tbody>
-		{% for l in proyecto %}
+		
 			<tr>
-				<td><p>{{l.id}}</p> </td>
-				<td><p>{{l.nombre_proyecto}}</p> </td>
-				<td><p>{{l.descripcion_proyecto}}</p> </td>
-				<td><p>{{l.foto_proyecto}}</p> </td>
-				<td><p>{{l.foto_proyecto2}}</p> </td>
-				<td><p>{{l.fecha_publicacion}}</p> </td>
-				<td><p>{{l.rubro}}</p> </td>
-				<td><a href="{% url 'home_app:user-perfil' l.nombre_usuario.id %}">l.nombre_ususario</a></td>
+				<td><p>{{proyecto.id}}</p> </td>
+				<td><p>{{proyecto.nombre_proyecto}}</p> </td>
+				<td><p>{{proyecto.descripcion_proyecto}}</p> </td>
+				<td><p>{{proyecto.foto_proyecto}}</p> </td>
+				<td><p>{{proyecto.foto_proyecto2}}</p> </td>
+				<td><p>{{proyecto.fecha_publicacion}}</p> </td>
+				<td><p>{{proyecto.rubro}}</p> </td>
+				<td><a href="{% url 'home_app:user-perfil' proyecto.nombre_usuario.id %}">{{proyecto.nombre_usuario}}</a></td>
 			</tr>
 			
-		{% endfor %}
+		
 
 
 		</tbody>
