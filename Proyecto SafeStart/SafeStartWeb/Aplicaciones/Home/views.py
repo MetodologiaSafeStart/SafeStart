@@ -12,7 +12,7 @@ class AddProyecto(CreateView):
 	second_model=Usuario
 	nombre_usuario= Usuario.nombre
 	fields=['nombre_proyecto','descripcion_proyecto',
-	'foto_proyecto','foto_proyecto2','fecha_publicacion',
+	'foto_proyecto','foto_proyecto2',
 	'nombre_usuario','rubro']
 	success_url='/'
 
@@ -21,6 +21,13 @@ class ModifyUser(CreateView):
 	model= Usuario
 	fields=['foto_perfil','profesion','presentacion','enlace_referencias']
 	success_url='.'
+	def get_queryset(self):
+		id = self.kwargs['pk']
+		lista=Usuario.objects.filter(
+			id=id
+
+			)
+		return lista
 
 
 class ListaProyecto(ListView):
@@ -28,14 +35,7 @@ class ListaProyecto(ListView):
 	model= Proyecto
 	context_object_name='proyectos'
 	paginate_by = 10
-	def get_queryset(self):
-		queryset = super(ListaProyecto, self).get_queryset()
-		fecha = date.today()
-		if self.request.GET.get('fecha'):
-			from datetime import datetime
-			fecha_str = self.request.GET.get('fecha')
-			fecha = datetime.strptime(fecha_str, '%d-%m-%Y')
-		return queryset.filter(fecha_publicacion =fecha)
+	
 
 class MostrarUser(DetailView):
 	template_name='home/user.html'
@@ -59,6 +59,21 @@ class MostrarProyecto(DetailView):
 		lista=Proyecto.objects.filter(
 				id=id
 			)
+		return lista
+
+class ProyectoCategoria(ListView):
+	template_name='home/proyecto-categoria.html'
+
+	context_object_name = 'proyectos'
+
+	def get_queryset(self):
+
+		rubro = self.kwargs['slug']
+		lista=Proyecto.objects.filter(
+			rubro=rubro
+
+			)
+		
 		return lista
 
 

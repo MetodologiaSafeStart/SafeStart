@@ -14,7 +14,9 @@ urlpatterns=[
 
 	path('proyecto/<pk>',views.MostrarProyecto.as_view(), name="proyecto-perfil"),
 
-	path('modify-user',views.ModifyUser.as_view(), name="modify-user"),
+	path('modify-user/<pk>',views.ModifyUser.as_view(), name="modify-user"),
+
+	path('proyectos/<slug>',views.ProyectoCategoria.as_view(), name="proyecto-categoria"),
 
 
  ]

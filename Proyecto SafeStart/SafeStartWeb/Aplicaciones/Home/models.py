@@ -60,6 +60,10 @@ class Proyecto(models.Model):
     nombre_usuario=models.ForeignKey(Usuario,on_delete=models.CASCADE)
     rubro=models.CharField(max_length=25,help_text='Seleccione el rubro',choices=RUBRO_CHOICES)
 
+
+    class Meta:
+      ordering=['-fecha_publicacion']
+
   
     def __str__(self):
         return self.nombre_proyecto
