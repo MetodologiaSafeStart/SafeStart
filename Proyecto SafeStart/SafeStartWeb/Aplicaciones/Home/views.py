@@ -57,13 +57,23 @@ class MostrarProyecto(DetailView):
 	def get_queryset(self):	
 		id = self.kwargs['pk']
 		lista=Proyecto.objects.filter(
-<<<<<<< HEAD
 				id=id
-=======
-			id=id
-
->>>>>>> c30e1bdcb3a6d6536031fafd75c9167baed4d594
 			)
+		return lista
+
+class ProyectoCategoria(ListView):
+	template_name='home/proyecto-categoria.html'
+
+	context_object_name = 'proyectos'
+
+	def get_queryset(self):
+
+		rubro = self.kwargs['slug']
+		lista=Proyecto.objects.filter(
+			rubro=rubro
+
+			)
+		
 		return lista
 
 

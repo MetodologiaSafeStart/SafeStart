@@ -16,5 +16,7 @@ urlpatterns=[
 
 	path('modify-user/<pk>',views.ModifyUser.as_view(), name="modify-user"),
 
+	path('proyectos/<slug>',views.ProyectoCategoria.as_view(), name="proyecto-categoria"),
+
 
  ]
