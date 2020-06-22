@@ -1,28 +1,38 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SafeStartWeb</title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
-			<header class="site-header inicio">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SafeStartWeb</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" type="text/css" href='base.css'>
+	</head>
+	<body>
+		<header class="site-header inicio">
 			<div class="contenedor">
 				<div class="barra">
 					<a href="index.html">
 						<!--img src ="img/logo.svg" alt="Logotipo"-->
 					</a>
 					<nav>
-						<!--blank sirve para abrir una pestaña nueva-->
-						<a target="_blank" href="nosotros.html">Categorias</a>
-						<a href="anuncios.html">Anuncios</a>
-						<a href="blog.html">Blog</a>
-						<a href="contacto.html">Contacto</a>
+						<a href="#">Categorias</a>
+						<a href="{% url 'home_app:como-funciona' %}">Como funciona</a>
+						<a href="#">Registrate</a>
+						<a href="#">Iniciar Sesión</a>
 					</nav>
 				</div>
-				<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
 			</div>
-			</header>
-</body>
+		</header>
+		{% block content %}
+		
+		{% endblock content %}
+		<footer>
+			<nav>
+				<a target="_blank" href="{% url 'home_app:nosotros' %}">Nosotros</a>
+				<a href="{% url 'home_app:contacto' %}">Contacto</a>
+				<p>Todos los Derechos Reservados &copy;</p>
+			</nav>
+		</footer>
+	</body>
 </html>
