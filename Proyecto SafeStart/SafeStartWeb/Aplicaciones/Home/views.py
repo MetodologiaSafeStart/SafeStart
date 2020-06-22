@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import(ListView,
-	CreateView, DetailView,
+	CreateView, DetailView,TemplateView
 	)
 # Create your views here.
 
@@ -75,6 +75,25 @@ class ProyectoCategoria(ListView):
 			)
 		
 		return lista
+
+class BaseView(TemplateView):
+	template_name = 'home/base.html'
+
+class IndexView(TemplateView):
+	template_name = 'home/index.html'
+
+class ComoFunciona(TemplateView):
+	template_name = 'home/como-funciona.html'
+
+class Nosotros(TemplateView):
+	template_name = 'home/nosotros.html'
+
+class Contacto(TemplateView):
+	template_name = 'home/contacto.html'
+
+
+
+
 
 
 

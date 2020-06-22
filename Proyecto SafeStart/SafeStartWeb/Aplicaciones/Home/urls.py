@@ -5,9 +5,17 @@ from . import views
 app_name ='home_app'
 
 urlpatterns=[
-	# primero url(si esta vacio, como en autores, entra al dominio principal 127.0.0.1:8000), luego vista a usar y luego un nombre 
+	
+	path('',views.IndexView.as_view(), name="index"),
+
+	path('como-funciona',views.ComoFunciona.as_view(), name="como-funciona"),
+
+	path('nosotros',views.Nosotros.as_view(), name="nosotros"),
+
+	path('contacto',views.Contacto.as_view(), name="contacto"),
+
 	path('nuevoProyecto',views.AddProyecto.as_view() , name="add-proyecto"),
-	#todo lo que este despues de url libros-autor/ hasta antes de otra / lo considere un pk y que recupere ese valor y lo guarde en ID
+	
 	path('user/<pk>',views.MostrarUser.as_view(), name="user-perfil"),
 
 	path('proyectos',views.ListaProyecto.as_view(), name="lista-proyectos"),
