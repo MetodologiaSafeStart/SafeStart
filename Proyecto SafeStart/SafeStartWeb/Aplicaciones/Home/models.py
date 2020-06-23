@@ -40,7 +40,6 @@ class Proyecto(models.Model):
        ('MS','Medicina/Salud'),
        ('MT','Mercadotécnia') ,
        ('OP','Operarios'),
-       ('OT','Otros'),
        ('PR','Producción') ,
        ('PU','Publicidad'),
        ('RH','Recursos Humanos'),
@@ -50,6 +49,7 @@ class Proyecto(models.Model):
        ('TR','Transporte'),
        ('TU','Turismo'),
        ('VE','Ventas'),
+       ('OT','Otros'),
       )
 
     nombre_proyecto= models.CharField('Nombre',max_length=25,help_text='Ingrese el nombre del proyecto')

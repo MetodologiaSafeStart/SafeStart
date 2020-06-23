@@ -35,9 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Aplicaciones.Home',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,6 @@ STATICFILES_DIRS=[
 STATIC_ROOT = os.path.join(BASE_DIR,"prod_static", "static_root")
 
 MEDIA_ROOT = os.path.join(BASE_DIR,"prod_static", "media_root")
+
+ACCOUNT_ACTIVATION_DAYS=7
+REGISTRATION_AUTO_LOGIN=True
