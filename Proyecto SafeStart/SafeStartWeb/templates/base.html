@@ -23,7 +23,7 @@
 						<!--img src ="img/logo.svg" alt="Logotipo"-->
 					</a>
 					<nav>
-						<a href="{% url 'home_app:categorias' %}">Categorias</a>
+						<a href="#">Categorias</a>
 						<a href="{% url 'home_app:como-funciona' %}">Como funciona</a>
 						<a href="#">Registrate</a>
 						<a href="#">Iniciar Sesión</a>
@@ -41,8 +41,7 @@
 				<p>Todos los Derechos Reservados &copy;</p>
 				<div id="header">
 		{% block header %}
-		<a href  ="{% url 'login' %}">{% trans "Home" %}</a> | 
-
+		<a href  ="{% url 'index' %}">{% trans "Home" %}</a> | 
 		
 		{% if user.is_authenticated %}
 		{% trans "Logged in" %}: {{ user.username }} 

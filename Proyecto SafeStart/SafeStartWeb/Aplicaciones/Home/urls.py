@@ -28,5 +28,7 @@ urlpatterns=[
 
 	path('proyectos/<slug>',views.ProyectoCategoria.as_view(), name="proyecto-categoria"),
 
+	
+
 
  ]
