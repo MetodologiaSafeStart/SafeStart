@@ -8,6 +8,8 @@ urlpatterns=[
 	
 	path('',views.IndexView.as_view(), name="index"),
 
+	path('categorias',views.Categorias.as_view(), name="categorias"),
+
 	path('como-funciona',views.ComoFunciona.as_view(), name="como-funciona"),
 
 	path('nosotros',views.Nosotros.as_view(), name="nosotros"),

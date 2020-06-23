@@ -91,6 +91,10 @@ class Nosotros(TemplateView):
 class Contacto(TemplateView):
 	template_name = 'home/contacto.html'
 
+class Categorias(TemplateView):
+	template_name = 'home/categorias.html'
+
+
 
 
 
