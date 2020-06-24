@@ -19,7 +19,7 @@ class AddProyecto(CreateView):
 class ModifyUser(CreateView):
 	template_name='home/modify-user.html'
 	model= Usuario
-	fields=['foto_perfil','profesion','presentacion','enlace_referencias']
+	fields=['nombre','fecha_nacimiento','foto_perfil','profesion','presentacion','enlace_referencias']
 	success_url='.'
 	def get_queryset(self):
 		id = self.kwargs['pk']
@@ -93,6 +93,9 @@ class Contacto(TemplateView):
 
 class Categorias(TemplateView):
 	template_name = 'home/categorias.html'
+
+class Login(TemplateView):
+	template_name = 'registration/login.html'
 
 
 
