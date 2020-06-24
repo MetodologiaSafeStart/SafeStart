@@ -10,6 +10,8 @@ urlpatterns=[
 
 	path('categorias',views.Categorias.as_view(), name="categorias"),
 
+	path('login',views.Login.as_view(), name="login"),
+
 	path('como-funciona',views.ComoFunciona.as_view(), name="como-funciona"),
 
 	path('nosotros',views.Nosotros.as_view(), name="nosotros"),
