@@ -1,17 +1,21 @@
-{% extends "home/base.html" %}
-
-{% block title %}Bievenido{% endblock %}
-
-{% block bienvenida %}
-
-   
-
-    {% if user.is_authenticated %}
-        <h1>Hola {{ user.username }}</h1>
-       
-    {% else %}
-        <a href="{% url 'home_app:sign_up' %}">Registrate</a>
-        <a href="{% url 'home_app:sign_in' %}">Iniciar sesión</a>
-    {% endif %}
-    
-{% endblock bienvenida %}
+{% extends 'home/base.html' %}
+{% block content %}
+	<section>
+		<h2>Sobre nosotros</h2>
+		<div>
+			<img src="img/icono1.svg" alt="La mejor seguridad">
+			<h3 class="encabezado">Seguridad</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh    posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
+		</div>
+		<div>
+			<img src="img/icono2.svg" alt="El mejor precio">
+			<h3>El Mejor Precio</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
+		</div>
+		<div>
+			<img src="img/icono3.svg" alt="Siempre a tiempo">
+			<h3>A Tiempo</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
+		</div>
+	</section>
+{% endblock content %}
