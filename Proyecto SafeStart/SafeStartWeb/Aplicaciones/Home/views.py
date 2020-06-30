@@ -6,7 +6,7 @@ from django.views.generic import(ListView,
 # Create your views here.
 
 from .models import Usuario, Proyecto
-from .forms import SignUpForm
+from .forms import SignUpForm, Perfil
 from django.contrib.auth.views import LoginView, LogoutView 
 
 class AddProyecto(CreateView):
@@ -83,6 +83,7 @@ class BaseView(TemplateView):
 
 class IndexView(TemplateView):
 	template_name = 'home/index.html'
+	model = Usuario
 
 class ComoFunciona(TemplateView):
 	template_name = 'home/como-funciona.html'
@@ -109,11 +110,11 @@ class SignUpView(CreateView):
         En este parte, si el formulario es valido guardamos lo que se obtiene de él y usamos authenticate para que el usuario incie sesión luego de haberse registrado y lo redirigimos al index
         '''
         form.save()
-        usuario = form.cleaned_data.get('username')
+        user = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password1')
-        usuario = authenticate(username=user, password=password)
-        login(self.request, user)
-        return redirect('home/modify-user')
+        user = authenticate(username=user, password=password)
+        login(self.request,user)
+        return redirect('/')
 
 
 class SignInView(LoginView):
@@ -123,9 +124,27 @@ class SignInView(LoginView):
 class SignOutView(LogoutView):
     pass
 
+#def AddPerfil(request, pk):
+	#post = get_object_or_404(Usuario, pk=pk)
+	#if request.method == "POST":
+		#form = Perfil(request.POST, instance=post)
+		#if form.is_valid():
+			#post = form.save(commit=False)
+			#post.user = request.user
+			#post.save()
+			#return redirect('/')
+	#else:
+		#form = Perfil(instance=post)
+	#return render(request, 'home/perfil.html', {'form': form})
 
 class AddPerfil(CreateView):
 	template_name='home/perfil.html'
 	model= Usuario
-	fields=['fecha_nacimiento','foto_perfil','profesion','presentacion','enlace_referencias']
+	form_class=Perfil
+	#form=AddPerfil(initial={'user':id_user})
 	success_url='/'
+
+	def get_initial(self):
+		initial = super().get_initial()
+		initial['user'] = self.kwargs ['slug']
+		return initial
