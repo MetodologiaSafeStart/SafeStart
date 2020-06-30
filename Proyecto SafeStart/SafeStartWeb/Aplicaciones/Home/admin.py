@@ -5,18 +5,17 @@ from .models import Usuario, Proyecto
 
 class UsuarioAdmin(admin.ModelAdmin):
 	list_display = (
-		'nombre',
+		'user',
 		'fecha_nacimiento',
 		'foto_perfil',
 		'profesion',
-		'correo',
 		'presentacion',
 		'enlace_referencias',
 		'id'
 		
 		)
 
-	search_fields =('nombre', 'profesion',)
+	search_fields =('user', 'profesion',)
 
 class ProyectoAdmin(admin.ModelAdmin):
 	list_display = (
