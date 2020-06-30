@@ -1,5 +1,17 @@
-{% extends 'home/base.html' %}
+{% extends "home/base.html" %}
 
-{% block content %}
-		<h1>HOLA MUNDO</h1>
-{% endblock content %}
+{% block title %}Bievenido{% endblock %}
+
+{% block bienvenida %}
+
+   
+
+    {% if user.is_authenticated %}
+        <h1>Hola {{ user.username }}</h1>
+       
+    {% else %}
+        <a href="{% url 'home_app:sign_up' %}">Registrate</a>
+        <a href="{% url 'home_app:sign_in' %}">Iniciar sesión</a>
+    {% endif %}
+    
+{% endblock bienvenida %}

@@ -1,0 +1,12 @@
+{% extends "home/base.html" %}
+
+{% block title %}Inicia Sesión{% endblock %}
+
+{% block bienvenida %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="submit">
+    </form>
+
+{% endblock bienvenida %}
