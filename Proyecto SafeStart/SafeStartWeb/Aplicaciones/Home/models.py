@@ -1,8 +1,5 @@
 from django.db import models
-from registration.users import UserModel
-from registration.users import UsernameField
-
-User = UserModel()
+from django.contrib.auth.models import User
 
 
 class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
@@ -14,8 +11,8 @@ class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
     correo=models.EmailField(help_text='Ingrese su correo')
     presentacion=models.TextField(help_text='Acerca de ti',max_length=200,null=True,blank=True)
     enlace_referencias=models.CharField(help_text='Link',max_length=50,null=True,blank=True)
-    User= models.OneToOneField(
-        User(),null= True,
+    user= models.OneToOneField(
+        User,
         on_delete=models.CASCADE
     )
 
