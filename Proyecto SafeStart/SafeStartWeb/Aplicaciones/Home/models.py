@@ -1,11 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-<<<<<<< HEAD
-
-=======
 from django.db.models.signals import post_save
 from django.dispatch import receiver
->>>>>>> 1901ba3b22711da7ca6eea8c30c0cf491d267f89
 
 class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
 
@@ -14,19 +10,13 @@ class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
     profesion=models.CharField(help_text='Profesión',max_length=30,null=True,blank=True)
     presentacion=models.TextField(help_text='Acerca de ti',max_length=200,null=True,blank=True)
     enlace_referencias=models.CharField(help_text='Link',max_length=50,null=True,blank=True)
-<<<<<<< HEAD
     user= models.OneToOneField(
         User,
         on_delete=models.CASCADE
     )
-=======
-    user= models.OneToOneField(User,on_delete=models.CASCADE)
-     
-    
->>>>>>> 1901ba3b22711da7ca6eea8c30c0cf491d267f89
 
     def __str__(self):
-      return self.usuario.username
+      return self.user.username
 
 def crear_usuario_perfil(sender,instance,created,**kwargs):
   if created:
