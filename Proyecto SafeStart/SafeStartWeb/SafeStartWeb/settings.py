@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Aplicaciones.Home',
     'crispy_forms',
-    'registration',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +53,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'SafeStartWeb.urls'
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
 
 TEMPLATES = [
     {

@@ -1,50 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PROYECTO</title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
+{% extends 'home/base.html' %}
+{% block content %}
 	<h1>User</h1>
 	
 	<table border="1">
 		<thead>
 			<th>ID</th>
-			<th>Nombre</th>
 			<th>Fecha de Nacimiento</th>
 			<th>Imagen</th>
 			<th>Profesion</th>
-			<th>Correo Electrónico</th>
 			<th>Presentacion</th>
 			<th>Enlace de Referencias</th>
-
-
 		</thead>
 		<tbody>
-		
+			
 			<tr>
 				<td><p>{{user.id}}</p> </td>
-				<td><p>{{user.nombre}}</p> </td>
 				<td><p>{{user.fecha_nacimiento}}</p> </td>
 				<td><p>{{user.foto_perfil}}</p> </td>
 				<td><p>{{user.profesion}}</p> </td>
-				<td><p>{{user.correo}}</p> </td>
 				<td><p>{{user.presentacion}}</p> </td>
 				<td><p>{{user.enlace_referencias}}</p> </td>
-
 				<td><a href="{% url 'home_app:modify-user' user.id %}">Modifica el Usuario</a></td>
 				
-
-
-				
 			</tr>
-			
-		
-
-
 		</tbody>
 	</table>
-</body>
-</html>
+{% endblock content %}

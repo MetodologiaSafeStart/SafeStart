@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PROYECTO</title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
-	
-	<h1>Crear Perfil</h1>
+{% extends 'home/base.html' %}
+{% block content %}
+	<h1>Crea tu perfil Perfil</h1>
 	<form method="post">
-		 {% csrf_token %}
+		{% csrf_token %}
 		{{form.as_p}}
 		<button type="submit" name="button">Guardar</button>
-		
-	</form>
-	
-	
-	
-
-</body>
-</html>
+	{% endblock content %}
