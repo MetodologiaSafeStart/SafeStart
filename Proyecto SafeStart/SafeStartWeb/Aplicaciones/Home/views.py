@@ -12,7 +12,6 @@ from django.contrib.auth.views import LoginView, LogoutView
 class AddProyecto(CreateView):
 	template_name='home/add-proyecto.html'
 	model= Proyecto
-	second_model=Usuario
 	fields=['nombre_proyecto','descripcion_proyecto',
 	'foto_proyecto','foto_proyecto2',
 	'nombre_usuario','rubro']
@@ -78,12 +77,27 @@ class ProyectoCategoria(ListView):
 		
 		return lista
 
+class ProyectoUser(ListView):
+	template_name='home/proyecto-user.html'
+
+	context_object_name = 'proyectos'
+
+	def get_queryset(self):
+
+		username = self.kwargs['slug']
+		lista=Proyecto.objects.filter(
+			nombre_usuario__username=username
+
+			)
+		
+		return lista
+
 class BaseView(TemplateView):
 	template_name = 'home/base.html'
 
 class IndexView(TemplateView):
 	template_name = 'home/index.html'
-	model = Usuario
+	model= Usuario
 
 class ComoFunciona(TemplateView):
 	template_name = 'home/como-funciona.html'
@@ -96,9 +110,6 @@ class Contacto(TemplateView):
 
 class Categorias(TemplateView):
 	template_name = 'home/categorias.html'
-
-class Login(TemplateView):
-	template_name = 'home/perfil_form.html'
 
 class SignUpView(CreateView):
     model = Usuario
@@ -124,18 +135,6 @@ class SignInView(LoginView):
 class SignOutView(LogoutView):
     pass
 
-#def AddPerfil(request, pk):
-	#post = get_object_or_404(Usuario, pk=pk)
-	#if request.method == "POST":
-		#form = Perfil(request.POST, instance=post)
-		#if form.is_valid():
-			#post = form.save(commit=False)
-			#post.user = request.user
-			#post.save()
-			#return redirect('/')
-	#else:
-		#form = Perfil(instance=post)
-	#return render(request, 'home/perfil.html', {'form': form})
 
 class AddPerfil(CreateView):
 	template_name='home/perfil.html'

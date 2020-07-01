@@ -21,7 +21,7 @@ class SignUpForm(UserCreationForm):
         )
 
 class Perfil(forms.ModelForm):   
-   user=forms.CharField(widget=forms.HiddenInput())
+   user=forms.CharField(max_length=140, required=True)#widget=forms.HiddenInput()
    class Meta:
         model = Usuario
         fields =('fecha_nacimiento','foto_perfil','profesion','presentacion','enlace_referencias',)

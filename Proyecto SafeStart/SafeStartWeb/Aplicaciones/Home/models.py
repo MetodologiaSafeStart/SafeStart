@@ -6,7 +6,7 @@ from django.dispatch import receiver
 class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
 
     fecha_nacimiento =models.DateField(help_text='Fecha de nacimiento',null=True,blank=True)
-    foto_perfil=models.ImageField(help_text='Elije una foto',null=True,blank=True)
+    foto_perfil=models.ImageField(help_text='Elije una foto',null=True,blank=True, upload_to='media_root/perfiles/')
     profesion=models.CharField(help_text='Profesión',max_length=30,null=True,blank=True)
     presentacion=models.TextField(help_text='Acerca de ti',max_length=200,null=True,blank=True)
     enlace_referencias=models.CharField(help_text='Link',max_length=50,null=True,blank=True)
@@ -67,10 +67,10 @@ class Proyecto(models.Model):
 
     nombre_proyecto= models.CharField('Nombre',max_length=25,help_text='Ingrese el nombre del proyecto')
     descripcion_proyecto=models.TextField(help_text='Acerca del Proyecto',max_length=200)
-    foto_proyecto=models.ImageField(help_text='Elije una foto',null=True,blank=True)
-    foto_proyecto2=models.ImageField(help_text='Elije una foto',null=True,blank=True)
+    foto_proyecto=models.ImageField(help_text='Elije una foto',null=True,blank=True,upload_to='media_root/proyectos/')
+    foto_proyecto2=models.ImageField(help_text='Elije una foto',null=True,blank=True,upload_to='media_root/proyectos/')
     fecha_publicacion=models.DateField(help_text='Fecha de publicacion',auto_now_add=True)
-    nombre_usuario=models.ForeignKey(Usuario,on_delete=models.CASCADE)
+    nombre_usuario=models.ForeignKey(User,on_delete=models.CASCADE)
     rubro=models.CharField(max_length=25,help_text='Seleccione el rubro',choices=RUBRO_CHOICES)
 
 

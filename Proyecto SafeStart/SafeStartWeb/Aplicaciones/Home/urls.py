@@ -35,6 +35,8 @@ urlpatterns=[
 	
 	path('perfil/<slug>',views.AddPerfil.as_view(), name='perfil'),
 
+	path('proyectos-autor/<slug>',views.ProyectoUser.as_view(), name='proyectos-autor'),
+
 
 
 	

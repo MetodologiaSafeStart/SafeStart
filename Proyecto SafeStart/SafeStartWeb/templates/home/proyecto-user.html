@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %}
 {% block content %}
 	
-	<h1>Proyectos</h1>
+	<h1>Tus Proyectos</h1>
 	
 	<table border="1">
 		<thead>
@@ -11,28 +11,22 @@
 			<th>Rubro</th>
 			<th>Ver proyecto</th>
 			
-
-
 		</thead>
 		<tbody>
-
 			{% for l in proyectos %}
-		
-			<tr>
 				
-				<td><p>{{l.nombre_proyecto}}</p> </td>
-				<td><p>{{l.descripcion_proyecto}}</p> </td>
-				<td><p>{{l.fecha_publicacion}}</p> </td>
-				<td><p>{{l.rubro}}</p> </td>
-				<td><a href="{% url 'home_app:proyecto-perfil' l.id %}">Ver Proyecto </a></td>
-				
-			</tr>
-
+				<tr>
+					
+					<td><p>{{l.nombre_proyecto}}</p> </td>
+					<td><p>{{l.descripcion_proyecto}}</p> </td>
+					<td><p>{{l.fecha_publicacion}}</p> </td>
+					<td><p>{{l.rubro}}</p> </td>
+					<td><a href="{% url 'home_app:proyecto-perfil' l.id %}">Ver Proyecto </a></td>
+					
+				</tr>
 			{% endfor %}
 			
-		
-
-
+			
 		</tbody>
 	</table>
 {% endblock content %}
