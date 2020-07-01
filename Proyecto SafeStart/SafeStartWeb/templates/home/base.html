@@ -1,87 +1,58 @@
 <!DOCTYPE html>
-{% load i18n %}
 {% load static %}
 <html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SafeStartWeb</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" type="text/css" href='base.css'>
+		<link rel="stylesheet" href="{{ STATIC_URL }}style.css" />
+		<title>{% block title %}User test{% endblock %}</title>
+	</head>
+	<body>
+		<header class="site-header inicio">
+			<div class="contenedor">
+				<div class="barra">
+					<a href="index.html">
+						<!--img src ="img/logo.svg" alt="Logotipo"-->
+					</a>
+					<nav>
+						<a href="{% url 'home_app:categorias' %}">Categorias</a>
+						<a href="{% url 'home_app:como-funciona' %}">Como funciona</a>
+						{% if user.is_authenticated %}
+							{% if user.Usuario.id is None %}
+								<a href="{% url 'home_app:perfil' user.username %}">Hola {{ user.username }}</a>
+								<a href="{% url 'home_app:sign_out' %}">Cerrar sesión</a>
+							{% else %}
+								<a href="{% url 'home_app:modify-user' %}">Hola {{ user.username }}</a>
+								<a href="{% url 'home_app:sign_out' %}">Cerrar sesión</a>
+							{% endif %}
+						{% else %}
+							
+							<a href="{% url 'home_app:sign_up' %}">Registrate</a>
+							<a href="{% url 'home_app:sign_in' %}">Iniciar sesión</a>
+						{% endif %}
+					</nav>
+				</div>
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SafeStartWeb</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-	<link rel="stylesheet" type="text/css" href='base.css'>
-	<link rel="stylesheet" href="{{ STATIC_URL }}style.css" />
-	<title>{% block title %}User test{% endblock %}</title>
-</head>
-
-<body>
-
-	<header class="site-header inicio">
-		<div class="contenedor">
-			<div class="barra">
-				<a href="index.html">
-					<!--img src ="img/logo.svg" alt="Logotipo"-->
-				</a>
-				<nav>
-					<a href="{% url 'home_app:categorias' %}">Categorias</a>
-					<a href="{% url 'home_app:como-funciona' %}">Como funciona</a>
-
-
-
-				   {% if user.is_authenticated %}
-					 {% if user.Usuario.id is None %}
-
-				     <a href="{% url 'home_app:perfil' %}">Hola {{ user.username }}</a>
-					 <a href="{% url 'home_app:sign_out' %}">Cerrar sesión</a>
-
-					 {% else %}
-
-					 <a href="{% url 'home_app:modify-user' %}">Hola {{ user.username }}</a>
-					 <a href="{% url 'home_app:sign_out' %}">Cerrar sesión</a>
-
-
-
-
-					 {% endif %}
-					 {% else %}
-					
-					<a href="{% url 'home_app:sign_up' %}">Registrate</a>
-					<a href="{% url 'home_app:sign_in' %}">Iniciar sesión</a>
-					{% endif %}
-
-
-
-
-
-
-				</nav>
 			</div>
-		</div>
-	</header>
+		</header>
+		{% block bienvenida %}
+		{% endblock bienvenida %}
+		{% block content %}
+		{% endblock content %}
+		
 
-	{% block bienvenida %}
-
-
-	{% endblock bienvenida %}
-
-
-
-	{% block content %}
-
-	{% endblock content %}
-	<footer>
-		<nav>
-			<a target="_blank" href="{% url 'home_app:nosotros' %}">Nosotros</a>
-			<a href="{% url 'home_app:contacto' %}">Contacto</a>
-			<p>Todos los Derechos Reservados &copy;</p>
-
-			<div id="header">
-				{% block header %}
-
-				{% endblock %}
-
-
-		</nav>
-	</footer>
-</body>
-
+		<footer>
+			<nav>
+				<a target="_blank" href="{% url 'home_app:nosotros' %}">Nosotros</a>
+				<a href="{% url 'home_app:contacto' %}">Contacto</a>
+				<p>Todos los Derechos Reservados &copy;</p>
+				<div id="header">
+					{% block header %}
+					{% endblock %}
+				</nav>
+			</footer>
+		</body>
 </html>

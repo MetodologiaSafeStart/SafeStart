@@ -33,7 +33,7 @@ urlpatterns=[
 	
 	path('cerrar-sesion/', views.SignOutView.as_view(), name='sign_out'),
 	
-	path('perfil/', views.AddPerfil.as_view(), name='perfil'),
+	path('perfil/<slug>',views.AddPerfil.as_view(), name='perfil'),
 
 
 
