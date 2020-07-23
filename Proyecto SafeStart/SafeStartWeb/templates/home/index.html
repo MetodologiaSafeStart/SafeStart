@@ -1,6 +1,6 @@
 {% extends 'home/base.html' %}
 {% block content %}
-<<<<<<< HEAD
+
 	<section>
 		<h2>Sobre nosotros</h2>
 		<div>
@@ -20,10 +20,6 @@
 		</div>
 	</section>
 
-	
-{% endblock %}	
-
-=======
 	{% if user.is_authenticated %}
 		<h2>Hola {{ user.first_name }}</h2>
 	{% endif %}
@@ -116,5 +112,5 @@
 			<a href="{% url 'home_app:proyecto-categoria' 'OT' %}">Otros </a><br>
 		</section>
 		
-	{% endblock content %}
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d
+{% endblock content %}
+

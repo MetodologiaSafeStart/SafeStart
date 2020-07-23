@@ -12,11 +12,11 @@ class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
     enlace_referencias=models.CharField(help_text='Link',max_length=50,null=True,blank=True)
     user= models.OneToOneField(
         User,
-<<<<<<< HEAD
-        on_delete=models.CASCADE,null=True
-=======
-        on_delete=models.CASCADE
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d
+
+        on_delete=models.CASCADE,editable=False
+
+       
+
     )
 
     def __str__(self):
