@@ -37,6 +37,10 @@ urlpatterns=[
 
 
 	path('proyectos-autor/<slug>',views.ProyectoUser.as_view(), name='proyectos-autor'),
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24cf0a20e73a9b67a8c5558018ec58b6e738d48d
 
 
 

@@ -162,7 +162,10 @@ class AddPerfil(CreateView):
 	#form=AddPerfil(initial={'user':id_user})
 	success_url='/'
 
-	def get_initial(self):
-		initial = super().get_initial()
-		initial['user'] = self.kwargs ['slug']
-		return initial
+	def form_valid(self, form):
+		self.object= form.save(commit=False)
+		self.object.user= self.request.user
+		return super(AddPerfil, self).form_valid(form)
+
+	
+    
