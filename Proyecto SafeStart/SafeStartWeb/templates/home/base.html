@@ -6,21 +6,15 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>SafeStartWeb</title>
-<<<<<<< HEAD
-		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-		<link rel="stylesheet" type="text/css" href='base.css'>
 		<link rel="stylesheet" href="{{ STATIC_URL }}style.css" />
-=======
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d
 		<title>{% block title %}User test{% endblock %}</title>
 	</head>
 	<body>
 		<header class="site-header inicio">
 			<div class="contenedor">
 				<div class="barra">
-<<<<<<< HEAD
 					<a href="index.html">
 						<!--img src ="img/logo.svg" alt="Logotipo"-->
 					</a>
@@ -42,51 +36,40 @@
 						{% endif %}
 					</nav>
 				</div>
-
-=======
-					<a href="{% url 'home_app:index' %}">
-						<img class= "img-index" src ="{% static 'img/logoindex.png' %}" alt="Logotipo>"
-					</a>
-					<nav class="nav">
-						<a class="nav-link" href="{% url 'home_app:categorias' %}">Categorias</a>
-						<a class="nav-link" href="{% url 'home_app:como-funciona' %}">Como funciona</a>
-						{% if user.is_authenticated %}
-								<a class="nav-link" href="{% url 'home_app:perfil' user.username %}">Hola {{ user.username }}</a>
-								<a class="nav-link" href="{% url 'home_app:sign_out' %}">Cerrar sesión</a>
-						{% else %}
-							
-							<a class="nav-link" href="{% url 'home_app:sign_up' %}">Registrate</a>
-							<a class="nav-link" href="{% url 'home_app:sign_in' %}">Iniciar sesión</a>
-						{% endif %}
-					</nav>
-				</div>
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d
-			</div>
-		</header>
-		{% block bienvenida %}
-		{% endblock bienvenida %}
-		{% block content %}
-		{% endblock content %}
-<<<<<<< HEAD
-		
-=======
-		{% block proyectos %}
-		{% endblock proyectos %}
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d
-
-		<footer>
-			<nav>
-				<a target="_blank" href="{% url 'home_app:nosotros' %}">Nosotros</a>
-				<a href="{% url 'home_app:contacto' %}">Contacto</a>
-				<p>Todos los Derechos Reservados &copy;</p>
-				<div id="header">
-					{% block header %}
-					{% endblock %}
+				<a href="{% url 'home_app:index' %}">
+					<img class= "img-index" src ="{% static 'img/logoindex.png' %}" alt="Logotipo">
+				</a>
+				<nav class="nav">
+					<a class="nav-link" href="{% url 'home_app:categorias' %}">Categorias</a>
+					<a class="nav-link" href="{% url 'home_app:como-funciona' %}">Como funciona</a>
+					{% if user.is_authenticated %}
+						<a class="nav-link" href="{% url 'home_app:perfil' user.username %}">Hola {{ user.username }}</a>
+						<a class="nav-link" href="{% url 'home_app:sign_out' %}">Cerrar sesión</a>
+					{% else %}
+						
+						<a class="nav-link" href="{% url 'home_app:sign_up' %}">Registrate</a>
+						<a class="nav-link" href="{% url 'home_app:sign_in' %}">Iniciar sesión</a>
+					{% endif %}
 				</nav>
-			</footer>
-		</body>
-<<<<<<< HEAD
+			</div>
+		</div>
+	</header>
+	{% block bienvenida %}
+	{% endblock bienvenida %}
+	{% block content %}
+	{% endblock content %}
+	
+	{% block proyectos %}
+	{% endblock proyectos %}
+	<footer>
+		<nav>
+			<a target="_blank" href="{% url 'home_app:nosotros' %}">Nosotros</a>
+			<a href="{% url 'home_app:contacto' %}">Contacto</a>
+			<p>Todos los Derechos Reservados &copy;</p>
+			<div id="header">
+				{% block header %}
+				{% endblock %}
+			</nav>
+		</footer>
+	</body>
 </html>
-=======
-	</html>
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d

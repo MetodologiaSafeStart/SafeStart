@@ -34,11 +34,9 @@ urlpatterns=[
 	path('cerrar-sesion/', views.SignOutView.as_view(), name='sign_out'),
 	
 	path('perfil/<slug>',views.AddPerfil.as_view(), name='perfil'),
-<<<<<<< HEAD
-=======
+
 
 	path('proyectos-autor/<slug>',views.ProyectoUser.as_view(), name='proyectos-autor'),
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d
 
 
 

@@ -99,12 +99,12 @@ class BaseView(TemplateView):
 
 class IndexView(TemplateView):
 	template_name = 'home/index.html'
-<<<<<<< HEAD
+
 	model=Usuario
 
-=======
+
 	model= Usuario
->>>>>>> fbf9853d6ae1b905100d23884c68ff91e047938d
+
 
 class ComoFunciona(TemplateView):
 	template_name = 'home/como-funciona.html'
