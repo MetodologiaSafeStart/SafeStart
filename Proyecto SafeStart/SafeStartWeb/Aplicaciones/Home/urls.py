@@ -17,7 +17,7 @@ urlpatterns=[
 
 	path('contacto',views.Contacto.as_view(), name="contacto"),
 
-	path('nuevoProyecto/<slug>',views.AddProyecto.as_view() , name="add-proyecto"),
+	path('nuevoProyecto',views.AddProyecto.as_view() , name="add-proyecto"),
 	
 	path('user/<pk>',views.MostrarUser.as_view(), name="user-perfil"),
 
@@ -35,8 +35,9 @@ urlpatterns=[
 	
 	path('perfil/<slug>',views.AddPerfil.as_view(), name='perfil'),
 
-
 	path('proyectos-autor/<slug>',views.ProyectoUser.as_view(), name='proyectos-autor'),
+
+
 
 
 

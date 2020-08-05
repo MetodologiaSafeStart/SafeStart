@@ -1,11 +1,24 @@
 {% extends "home/base.html" %}
-
-{% block title %}Registrate{% endblock %}
-
 {% block content %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" name="submit">
-    </form>    
+	<h2 class="centrar-texto fw-400 no-margin">Registrate</h2>
+	<main class=" registro contenedor">
+		
+		<div class="seccion-registro ">
+			<div class="form">
+				<form action="" method="POST">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" name="submit">
+				</form>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="contenido-aside">
+				<h2 class="centrar-texto fw-600"> Bienvenido a Safestart</h2>
+				<p>Forma parte de esta gran familia </p>
+			</div>
+			
+		</div>
+		
+	</main>
 {% endblock content %}

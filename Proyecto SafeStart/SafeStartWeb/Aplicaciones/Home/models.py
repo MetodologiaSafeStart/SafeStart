@@ -10,12 +10,16 @@ class Usuario(models.Model):#TABLA DE LA BASE DE DATOS
     profesion=models.CharField(help_text='Profesión',max_length=30,null=True,blank=True)
     presentacion=models.TextField(help_text='Acerca de ti',max_length=200,null=True,blank=True)
     enlace_referencias=models.CharField(help_text='Link',max_length=50,null=True,blank=True)
+
     user= models.OneToOneField(
         User,
         on_delete=models.CASCADE,editable=False
 
 
     )
+
+    
+
 
     def __str__(self):
       return self.user.username

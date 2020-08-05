@@ -1,32 +1,35 @@
 {% extends 'home/base.html' %}
 {% block content %}
-	<h1>Proyectos</h1>
-	
-	<table border="1">
-		<thead>
-			<th>ID</th>
-			<th>Nombre del proyecto</th>
-			<th>Descripción del proyecto</th>
-			<th>Imagen</th>
-			<th>Imagen 2</th>
-			<th>Fecha publicacion</th>
-			<th>Rubro</th>
-			<th>Usuario</th>
-		</thead>
-		<tbody>
-			
-			<tr>
-				<td><p>{{proyecto.id}}</p> </td>
-				<td><p>{{proyecto.nombre_proyecto}}</p> </td>
-				<td><p>{{proyecto.descripcion_proyecto}}</p> </td>
-				<td><p>{{proyecto.foto_proyecto}}</p> </td>
-				<td><p>{{proyecto.foto_proyecto2}}</p> </td>
-				<td><p>{{proyecto.fecha_publicacion}}</p> </td>
-				<td><p>{{proyecto.rubro}}</p> </td>
-				<td><a href="{% url 'home_app:user-perfil' proyecto.nombre_usuario.id %}">{{proyecto.nombre_usuario}}</a></td>
-			</tr>
-			
-			
-		</tbody>
-	</table>
+	<h1 class="centrar-texto fw-300">Proyecto</h1>
+	<main class="contenedor seccion-proyectos">
+		<div class="contenedor-proyectos">
+			<table border="1">
+				<thead>
+					<th>ID</th>
+					<th>Nombre del proyecto</th>
+					<th>Descripción del proyecto</th>
+					<th>Imagen</th>
+					<th>Imagen 2</th>
+					<th>Fecha publicacion</th>
+					<th>Rubro</th>
+					<!--<th>Usuario</th>-->
+				</thead>
+				<tbody>
+					
+					<tr>
+						<td><p>{{proyecto.id}}</p> </td>
+						<td><p>{{proyecto.nombre_proyecto}}</p> </td>
+						<td><p>{{proyecto.descripcion_proyecto}}</p> </td>
+						<td><p>{{proyecto.foto_proyecto}}</p> </td>
+						<td><p>{{proyecto.foto_proyecto2}}</p> </td>
+						<td><p>{{proyecto.fecha_publicacion}}</p> </td>
+						<td><p>{{proyecto.rubro}}</p> </td>
+						<!--<td><a class="btn btn-primario" href="{% url 'home_app:user-perfil' proyecto.nombre_usuario.id %}">{{proyecto.nombre_usuario}}</a></td>-->
+					</tr>
+					
+					
+				</tbody>
+			</table>
+		</div>
+	</main>
 {% endblock content %}

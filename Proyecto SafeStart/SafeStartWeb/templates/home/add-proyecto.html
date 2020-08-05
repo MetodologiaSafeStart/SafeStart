@@ -1,9 +1,15 @@
 {% extends 'home/base.html' %}
 {% block content %}
-	<h1>Nuevo Proyecto</h1>
-	<form method="post">
-		{% csrf_token %}
-		{{form.as_p}}
-		<button type="submit" name="button">Guardar</button>
-	</form>
+	<h1 class="centrar-texto fw-300">Nuevo Proyecto</h1>
+	<main class="contenedor centrar-texto add-proyecto">
+		<div class="nuevo-proyecto">
+			<form method="post">
+				{% csrf_token %}
+				{{form.as_p}}
+				<button class="btn btn-secundario" type="submit" name="button">Guardar</button>
+			</form>
+		</div>
+		
+	</main>
+	
 {% endblock content %}

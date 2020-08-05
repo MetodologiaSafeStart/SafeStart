@@ -49,6 +49,8 @@ class ListaProyecto(ListView):
 class MostrarUser(DetailView):
 	template_name='home/user.html'
 	context_object_name='user'
+    
+ 
 
 	def get_queryset(self):
 		id = self.kwargs['pk']
@@ -127,7 +129,9 @@ class Categorias(TemplateView):
 class SignUpView(CreateView):
     model = Usuario
     form_class = SignUpForm
-	
+    template_name = 'home/Usuario_form.html'
+   
+ 
 
     def form_valid(self, form):
         '''

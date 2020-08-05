@@ -1,0 +1,649 @@
+/*Global*/
+html{
+	box-sizing: border-box;
+	font-size: 62.5%; /*RESET para REMS- 62.5% = 10 px de 16px */
+
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+
+	font-family: 'Lato', sans-serif;
+	font-size: 1.6rem; /*=16px es el default*/
+	line-height: 2;
+}
+
+img{
+	max-width: 100%;
+}
+
+/*Utilidades*/
+
+h1{
+	font-size: 3.8rem;
+}
+
+h2{
+	font-size:3.5rem;
+}
+
+h3{
+	font-size:3rem;
+}
+
+h4{
+	font-size:2.6rem;
+
+}
+
+h5{
+	font-size: 2.0rem;
+}
+
+.section{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.fw-300{
+	font-weight:300;
+}
+
+.fw-700{
+	font-weight: 700;
+}
+
+.centrar-texto{
+	text-align: center;
+}
+
+.d-block{
+	display: block!important;
+}
+
+.contenido-centrado{
+	max-width:800px;
+}
+
+.d-block{
+	display:block!important;
+}
+
+.no-margin{
+	margin: 0 auto;
+}
+
+.btn{
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	color:  #fdfefe ;
+	padding:2rem 3rem;
+	border:none;
+	border-radius: 2rem;
+
+
+}
+
+.btn-primario{
+	background-color: #e74c3c ;
+}
+
+.btn-primario:hover{
+	background-color: #c0392b ;
+}
+
+.btn-secundario{
+	background-color: #2980b9;
+}
+
+.btn-secundario:hover{
+	background-color:#2471a3;
+}
+
+/*Diseño*/
+
+.contenedor{
+	max-width: 1200px;
+	margin:0 auto;
+}
+
+/*#435387
+	*/
+.site-header.inicio{
+	background-color: #2e4053;
+
+}
+
+
+.barra{
+	display:flex;
+	justify-content: space-between;
+	padding-top: 3rem;
+	align-items: center;
+	margin:0 auto;
+	padding-top: 0;
+	height: 10rem;
+}
+
+.img-index{
+	width:20rem;
+}
+
+.botones-nav a{
+	color:#ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-right: 2rem;
+}
+
+.botones-nav a:last-of-type{
+	margin-right: 0;
+}
+
+.botones-nav a:hover{
+	color: rgba(246, 221, 204 );
+	font-weight: 900;
+}
+
+.bienvenida{
+	margin-top: 0;
+	background-image: url(../../static/img/emprendedores.jpg);
+	background-position: center center;
+	background-size: cover;
+	height:60rem;
+	display:flex;
+	align-items: center;
+	position: relative;
+
+
+}
+
+
+
+.bienvenida:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.bienvenida h1{
+	margin-top:0;
+	position: relative;
+	color:#fdfefe;
+}
+
+.bienvenida p{
+	font-size: 2rem;
+	font-weight:300;
+	color: #fdfefe;
+	text-align: center;
+	position:relative;
+	width: 70rem;
+}
+
+.contenido-nosotros{
+	display:flex;
+	justify-content: space-between;
+
+}
+
+.iconos-nosotros{
+	flex-basis: calc(33.3% - 3rem);
+	text-align: center;
+}
+
+.iconos-nosotros h3{
+	text-transform: uppercase;
+}
+
+.iconos-nosotros img{
+
+	max-width:50%;
+
+}
+
+.seccion-interes{
+	background-image:url(../../static/img/equipo-trabajo.jpg);
+	background-position: center center;
+	background-size: cover;
+	height:50rem;
+	display:flex;
+	justify-content: flex-start;
+	align-items: center;
+	position:relative;
+	margin:3rem 0 0 0;
+}
+
+.seccion-interes:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+
+
+.contenido-interes h2{
+	position:relative;
+	color:#ebdef0;
+	text-transform: uppercase;
+	width: 70%;
+	line-height: 7rem;
+}
+
+.contenido-interes a{
+	padding:1rem 3rem;
+	position:relative;
+	text-decoration: none;
+	text-align: center;
+	color:#fdfefe;
+	text-transform: uppercase;
+	border:0;
+	border-radius: 2rem;
+	background-color: #ec7063 ;
+}
+
+.contenido-interes a:hover{
+	background-color: #cb4335;
+}
+
+.todas-categorias{
+	background-color: #1c2833;
+	margin:0;
+}
+
+.todas-categorias h2{
+	color:#fbfcfc;
+	margin:0;
+	padding-top: 2rem;
+}
+
+.todas-categorias h2::after{
+	content:'';
+	display: block;
+	width:100%;
+	height: .5rem;
+	background-color:#71B100;
+}
+
+.categorias{
+ 	display:flex;
+ 	justify-content: space-between;
+ 	text-align: center;
+ 	align-items: center;
+ 	flex-wrap: wrap;
+ 	margin:2rem auto 0;
+ 	padding:0 0 2rem 0;
+
+}
+
+
+
+.categorias a{
+	flex: 0 0 calc(33.3% - 2rem);
+	margin: 1rem auto;
+	padding:1rem;
+	text-decoration: none;
+	text-align: center;
+	color:#fbfcfc;
+	text-transform: uppercase;
+}
+
+.categorias a:hover{
+	text-decoration:underline;
+}
+
+.seccion-footer{
+	background-color:  #333333;
+	height:15rem;
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+}
+
+.pie-pagina{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo-footer{
+	width: 19%;
+	display:flex;
+
+}
+
+.pie-pagina a{
+	margin:0 3rem;
+	text-decoration:none;
+	text-align: center;
+	color:#fbfcfc;
+	text-transform: uppercase;
+}
+
+.pie-pagina a:hover{
+	font-weight: 600;
+	color:rgba(246, 221, 204 );
+
+}
+
+.copyright{
+	margin:0 3rem;
+	color: #ffffff;
+}
+
+.activos{
+	display:flex;
+	justify-content: space-between;
+	height: 40rem;
+	margin: 4rem auto;
+}
+
+.proyectos-activos{
+	flex-basis: calc(50%);
+	background-image:url(../../static/img/fondo-bienvenida.png);
+	background-position: center center;
+	background-size: cover;
+	border: 1px solid #B5B5B5;
+	text-align: center;
+	padding-top:5rem;
+	position: relative;
+	color: #fdfefe ;
+}
+
+.proyectos-activos:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.proyectos-activos h4, h5{
+	text-transform: uppercase;
+	position:relative;
+}
+
+.proyectos-activos a{
+	position:relative;
+}
+
+.crear-proyecto{
+	flex-basis: calc(50% - 3rem);
+	background-image:url(../../static/img/gente-planeando.jpg);
+	background-position: center center;
+	background-size: cover;
+	border: 1px solid #B5B5B5;
+	text-align: center;
+	color: #fdfefe;
+	position:relative;
+}
+
+.crear-proyecto:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+}
+.crear-proyecto h2, h4{
+	text-transform: uppercase;
+	position: relative;
+}
+
+.crear-proyecto p{
+	font-size: 2.0rem;
+	position: relative;
+}
+
+.crear-proyecto a{
+	position: relative;
+}
+
+/*Registro*/
+
+.registro{
+	margin: 3rem auto;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+form p{
+	font-size: 1.4rem
+	color:4f4f4f;
+	text-align: center;
+}
+
+legend{
+	font-size: 2.6rem;
+	color: #333333;
+}
+
+label{
+	display:block;
+	font-weight: 700;
+}
+
+input:not([type="submit"]),
+textarea,
+select{
+	display: block;
+	width: 100%;
+	background-color: #e1e1e1;
+	border:none;
+}
+
+input[type="submit"]{
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+	background-color:  #27ae60;
+	border-radius: 2rem;
+	text-align: center;
+
+}
+
+input[type="submit"]:hover{
+	background-color:  #117a65 ;
+}
+
+.form{
+	margin:0;
+	border:1px solid #B5B5B5;
+	padding: 0 5rem;
+}
+
+.seccion-registro{
+	text-align: center;
+}
+
+.seccion-registro h2{
+	margin:0 auto;
+}
+
+.aside{
+	text-align: center;
+	padding: 0 2rem;
+	width: 40%;
+	height: 70rem;
+	background-image: url(../../static/img/gente-trabajo.jpg) ;
+	background-position: center center;
+	background-size: cover;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position:relative;
+}
+
+.aside:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+
+
+
+.contenido-aside{
+	padding: 0;
+	position: relative;
+	flex:1;
+}
+
+.contenido-aside p{
+	color:#fdfefe;
+	font-size: 2.0rem;
+	font-weight: 600;
+}
+
+.contenido-aside h2{
+	color:#fdfefe;
+	font-weight: 600;
+}
+
+
+/*Proyectos*/
+
+.seccion-proyectos{
+	height: 60rem;
+	
+
+}
+
+.contenedor-proyectos{
+	display: flex;
+	flex-basis: calc(100%);
+	text-align: center;
+
+}
+
+.contenedor-proyectos table {
+	width: 100%;
+	background-color: #EFF4F1;
+	
+}
+
+.contenedor-proyectos th{
+	padding:2rem 0;
+	border:1px solid #B5B5B5;
+}
+
+.contenedor-proyectos td{
+	height: 15rem;
+	border:1px solid #B5B5B5;
+}
+
+/*Iniciar sesion*/
+
+.contenedor-sesion{
+	height: 50rem;
+}
+
+.inicio-sesion{
+	margin-top: 5rem;
+	background-color: #273746 ;
+	border-radius: 3rem;
+	width: 25%;
+	height: 30rem;
+}
+
+
+.inicio-sesion form{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.inicio-sesion form input[type="submit"]{
+	margin: 4rem 3rem;
+	background-color: #52BE80 ;
+
+}
+
+.inicio-sesion form input:not([type="submit"]){
+	text-align: center;
+}
+
+/*Add Proyecto*/
+
+.add-proyecto{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nuevo-proyecto{
+	flex:1;
+	margin: 0 25rem;
+	margin-bottom: 5rem;
+	width: 30%;
+}
+
+/*Como Funciona*/
+.contenedor-funciona{
+	margin:0 auto;
+	background-image: url(../../static/img/trabajo-funciona.jpg) ;
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+
+
+
+.contenedor-funciona:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.seccion-como{
+	position: relative;
+	color:#ECF0F1;
+}
+
+.seccion-como h1{
+
+	margin: 0 auto;
+
+}
+
+.seccion-funciona{
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: start;
+}
+
+.iconos.funciona{
+	flex-basis: calc(33.3% - 3rem);
+	text-align: center;
+}
+
+/*Nosotros*/
+.seccion-nosotros p{
+	text-align: center;
+	margin: 3rem 5rem;
+}

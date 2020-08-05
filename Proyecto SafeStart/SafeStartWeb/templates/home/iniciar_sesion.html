@@ -1,12 +1,15 @@
 {% extends "home/base.html" %}
-
 {% block title %}Inicia Sesión{% endblock %}
-
 {% block bienvenida %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" name="submit">
-    </form>
+	<main class="contenedor-sesion">
+		<h1 class="centrar-texto fw-300">Iniciar Sesion</h1>
+		<div class="contenedor inicio-sesion ">
 
+			<form method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" name="submit">
+		</form>				
+		</div>
+	</main>
 {% endblock bienvenida %}
