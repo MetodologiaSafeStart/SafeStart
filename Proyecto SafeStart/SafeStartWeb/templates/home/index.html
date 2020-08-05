@@ -1,82 +1,75 @@
 {% extends 'home/base.html' %}
+{% load static %}
 {% block content %}
-
-	<section>
-		<h2>Sobre nosotros</h2>
-		<div>
-			<img src="img/icono1.svg" alt="La mejor seguridad">
-			<h3 class="encabezado">Seguridad</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh    posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
-		</div>
-		<div>
-			<img src="img/icono2.svg" alt="El mejor precio">
-			<h3>El Mejor Precio</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
-		</div>
-		<div>
-			<img src="img/icono3.svg" alt="Siempre a tiempo">
-			<h3>A Tiempo</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
-		</div>
-	</section>
-
+	
 	{% if user.is_authenticated %}
-		<h2>Hola {{ user.first_name }}</h2>
-	{% endif %}
-	{% if user.is_authenticated == False %}
-		<section>
-			<h2>Bienvenidos a Safestart</h2>
-			<p>Safestart es el lugar donde los grandes proyectos nacen, donde un pequeño grano de arena puede convertirse en el sueño de otra. Por eso estamos aqui, para impulsar desde otra perspectiva el nacimiento de aquellas posibilidades que oueden llegar a cambiar al mundo</p>
+		<section class="contenedor">
+			<h3 class="fw-300 centrar-texto">Bienvenido {{ user.first_name }}</h3>
 		</section>
-		<div><h2>Sobre nosotros</h2>
-			<section class="barra">
-				
-				<div>
-					<img src="img/icono1.svg" alt="La mejor seguridad">
-					<h3 class="encabezado">Seguridad</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh    posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
-				</div>
-				<div>
-					<img src="img/icono2.svg" alt="El mejor precio">
-					<h3>El Mejor Precio</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
-				</div>
-				<div>
-					<img src="img/icono3.svg" alt="Siempre a tiempo">
-					<h3>A Tiempo</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt. Mauris maximus lectus porttitor quam tempus rutrum. Sed nec dolor et risus hendrerit pharetra. In luctus ullamcorper nibh, eu malesuada nibh pretium in. Phasellus quis eros luctus, feugiat ex vitae, tempus mauris. Sed ac iaculis erat, quis iaculis erat.</p>
-				</div>
-			</section>
-		</div>
 	{% endif %}
 	
-	<main>
-		
-		{% if user.is_authenticated %}
-			<div>
-				<h2>Proyectos Activos</h2>
-				<h4>Aqui podras ver tus proyectos activos</h4>
-				<a href="{% url 'home_app:proyectos-autor' user.username %}">Ver tus proyectos</a>
-				<br><br>
-			</div>
-			<div>
-				<h2>Todavía no creas un proyecto?</h2>
-				<h3>EMPECEMOS!</h3>
-				<a href="{% url 'home_app:add-proyecto' %}">NUEVO PROYECTO XD</a>
-				<br><br>
-			</div>
+	
+	{% if user.is_authenticated == False %}
+		<section class="bienvenida">
 			
-		{% endif %}
-		<div>
-			<h2>Estas interesado en participar en algun proyecto en específico?</h2>
+			<div class="contenedor contenido-bienvenida">
+				<h1 class="fw-700 centrar-texto">Bienvenidos a Safestart</h1>
+				<p>Safestart es el lugar donde los proyectos nacen, donde un pequeño grano de arena puede convertirse en el sueño de otra y donde las ideas estan ahi, esperando para transformarse en grandes oportunidades. Por eso estamos aqui, para impulsar desde otra perspectiva aquellos emprendimientos que pueden llegar a cambiar el mundo.</p>
+				
+			</div>
+		</section>
+		<section class="contenedor">
+			<h2 class="centrar-texto fw-300">Sobre nosotros</h2>
+			<div class="contenido-nosotros">
+				
+				<div class="iconos-nosotros">
+					<img src="{% static 'img/idea.png' %}" alt="La mejor seguridad">
+					<h3 class="encabezado">Buenas Ideas</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh    posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt.</p>
+				</div>
+				<div class="iconos-nosotros">
+					<img src="{% static 'img/equipo.png' %}" alt="El mejor precio">
+					<h3>El Mejor Equipo</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt.</p>
+				</div>
+				<div class="iconos-nosotros">
+					<img src="{% static 'img/proteger.png' %}" alt="Siempre a tiempo">
+					<h3>Comienzo Seguro</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam dui ut nibh posuere, ut placerat erat blandit. Integer laoreet lorem eu sapien euismod tincidunt.</p>
+				</div>
+			</div>
+		</section>
+	{% endif %}
+	
+	
+	
+	{% if user.is_authenticated %}
+		<main class="activos contenedor">
+			<div class="proyectos-activos">
+				<h4 class="fw-600 centrar-texto">Proyectos Activos</h4>
+				<h5 class="centrar-texto fw-600">Aqui podras ver tus proyectos activos</h5>
+				<a class="btn btn-primario" href="{% url 'home_app:proyectos-autor' user.username %}">Ver tus proyectos</a>
+				<br><br>
+			</div>
+			<div class="crear-proyecto">
+				<h4 class="fw-600 centrar-texto">No has creado un proyecto?</h4>
+				<p class="centrar-texto fw-600">No pierdas la oportunidad! <br> Miles de personas estan esperando formar parte.</p>
+				<h4 class="centrar-texto fw-600">EMPECEMOS!</h4>
+				<a class="btn btn-secundario" href="{% url 'home_app:add-proyecto' %}">NUEVO PROYECTO XD</a>
+				<br><br>
+			</div>
+		</main>
+	{% endif %}
+	
+	<section class="seccion-interes">
+		<div class="contenido-interes contenedor">
+			<h2>Estas interesado en participar en algún proyecto en específico?</h2>
 			<a href="{% url 'home_app:lista-proyectos' %}">Ver Proyectos</a>
-			<br><br>
 		</div>
-		
-	</main>
-	<section>
-		<h1>Categorías</h1>
-		<div class="Categorias">
+	</section>
+	<section class="todas-categorias">
+		<h2 class="centrar-texto fw-300">Categorías</h2>
+		<div class="categorias contenedor">
 			<a href="{% url 'home_app:proyecto-categoria' 'AO' %}">Administración/Oficina </a><br>
 			<a href="{% url 'home_app:proyecto-categoria' 'AL' %}">Almacén </a><br>
 			<a href="{% url 'home_app:proyecto-categoria' 'AC' %}">Atención a clientes </a><br>
@@ -110,7 +103,7 @@
 			<a href="{% url 'home_app:proyecto-categoria' 'TU' %}">Turismo </a><br>
 			<a href="{% url 'home_app:proyecto-categoria' 'VE' %}">Ventas </a><br>
 			<a href="{% url 'home_app:proyecto-categoria' 'OT' %}">Otros </a><br>
-		</section>
-		
+		</div>
+	</section>
+	
 {% endblock content %}
-
