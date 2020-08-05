@@ -17,6 +17,12 @@ class AddProyecto(CreateView):
 	'nombre_usuario','rubro']
 	success_url='/'
 
+	def form_valid(self, form):
+		self.object= form.save(commit=False)
+		self.object.user= self.request.user
+		return super(AddProyecto, self).form_valid(form)
+
+
 class ModifyUser(CreateView):
 	template_name='home/modify-user.html'
 	model= Usuario
